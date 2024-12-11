@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wall.css">
+    <title>Game Tebak Angka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .game-container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"] {
+            padding: 10px;
+            width: 80px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>Game Tebak Angka</h2>
+        <p>Tebak angka antara 1 dan 100</p>
+        <input type="number" id="guessInput" min="1" max="100" placeholder="Tebakan Anda">
+        <button onclick="checkGuess()">Tebak</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        // Menghasilkan angka acak antara 1 dan 100
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        console.log('Angka yang benar (untuk debug):', randomNumber); // Hapus baris ini setelah testing
+
+        function checkGuess() {
+            const guess = document.getElementById('guessInput').value;
+            const message = document.getElementById('message');
+
+            if (!guess) {
+                message.textContent = 'Harap masukkan angka!';
+                message.style.color = 'orange';
+                return;
+            }
+
+            const number = Number(guess);
+
+            if (number < randomNumber) {
+                message.textContent = 'Tebakan Anda terlalu rendah!';
+                message.style.color = 'blue';
+            } else if (number > randomNumber) {
+                message.textContent = 'Tebakan Anda terlalu tinggi!';
+                message.style.color = 'red';
+            } else {
+                message.textContent = 'Selamat! Tebakan Anda benar!';
+                message.style.color = 'green';
+            }
+        }
+    </script>
+</body>
+</html>

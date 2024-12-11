@@ -1,0 +1,64 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+html, body{
+	display: grid;
+	height: 100vh;
+	width: 100%;
+	place-items: center;
+	background-image: url(https://wallpaperaccess.com/full/4310817.jpg);
+	  background-size: cover;
+	  background-position: center;
+	  background-repeat: no-repeat;
+  }
+.kalkulator{
+	position: relative;
+	display: grid;
+}
+.kalkulator .value{
+	grid-column: span 4;
+	height: 80px;
+	width: 240px;
+	color: #ffffff;
+	text-align: right;
+	border: none;
+	outline: 2px solid rgba(0,0,0,.1);;
+	padding: 10px;
+	font-size: 18px;
+	background: rgba(24, 22, 22, 0.646);
+}
+.kalkulator span{
+	display: grid;
+	width: 60px;
+	height: 60px;
+	color: #ffffffff;
+	background: rgba(17, 34, 51, 0.47);
+	place-items:  center;
+	border:20px solid rgba(0,0,0,.1);
+}
+.kalkulator span:active{
+	background: #00fbff00;
+	color: #ffffff;
+}
+.kalkulator span.clear{
+	color: #ffffff;
+	 grid-column: span 1;
+	 width: 60px;
+	 background: #1298;
+
+}
+.kalkulator span.bpc{
+ 	grid-row: span 1;
+ 	height: 60px;
+ 	background: #000000b5;
+ }
+ .kalkulator span.plus{
+ 	grid-row: span 1;
+ 	height: 60px;
+ }
+  .kalkulator span.equal{
+  	background: #03b1ff;
+  }
